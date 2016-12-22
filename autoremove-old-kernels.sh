@@ -19,7 +19,7 @@ RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-atLeastNthKenrnelVersions=1	# number of kerner versions to keep for backup
+atLeastNthKenrnelVersions=1	# number of kernel versions to keep for backup
 currentKernel=`uname -r`
 oldKernels=`dpkg -l | grep ^ii | grep -E -o "linux-image-([0-9]+.)+\w+" | grep -Fv $currentKernel | tail -n +$(($atLeastNthKenrnelVersions + 1))`
 
